@@ -24,7 +24,7 @@ class ToDoListDbHelper extends SQLiteOpenHelper {
 
     // database and table information
     private static final String DB_NAME = "toDos.db";
-    private static final int DB_VERSION = 2;
+    private static final int DB_VERSION = 3;
     private static final String TABLE_NAME = "toDoList";
 
     // column names
@@ -52,9 +52,9 @@ class ToDoListDbHelper extends SQLiteOpenHelper {
 
         // insert instructions on how to use the app
         db.execSQL("INSERT INTO " + TABLE_NAME + "(" + TASK_COLUMN + ") " +
-                "VALUES("+ activityContext.getText(R.string.db_instruction_entry_add)+")," +
-                "(" + activityContext.getText(R.string.db_instruction_entry_done) + ")," +
-                "(" + activityContext.getText(R.string.db_instruction_entry_delete)+")");
+                "VALUES('"+ activityContext.getText(R.string.db_instruction_entry_add)+"')," +
+                "('" + activityContext.getText(R.string.db_instruction_entry_done) + "')," +
+                "('" + activityContext.getText(R.string.db_instruction_entry_delete)+"')");
     }
 
     @Override
